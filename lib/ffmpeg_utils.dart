@@ -1,14 +1,14 @@
 import 'dart:io';
 
-// تابع برای ادغام ویدیو و صدا با استفاده از FFmpeg
+//// merge the Video and Audio
 Future<void> mergeVideoAndAudio(
     String videoPath, String audioPath, String outputPath) async {
   var result = await Process.run('ffmpeg', [
-    '-i', videoPath, // ورودی ویدیو
-    '-i', audioPath, // ورودی صدا
-    '-c:v', 'copy', // کپی استریم ویدیویی بدون تغییر
-    '-c:a', 'aac', // استفاده از کدک AAC برای صدا
-    outputPath // خروجی فایل نهایی
+    '-i', videoPath, //// video input
+    '-i', audioPath, //// Audio input
+    '-c:v', 'copy', //// Copy stream without changes
+    '-c:a', 'aac', //// use AAC codec for audio
+    outputPath //// final output
   ]);
 
   if (result.exitCode != 0) {
