@@ -6,6 +6,8 @@ version: 0.0.1
 environment:
   sdk: ^3.5.3
 
+publish_to: none
+
 # Add regular dependencies here.
 dependencies:
   args: ^2.4.2
@@ -13,7 +15,10 @@ dependencies:
   flutter_hls_parser: ^2.0.1
   html: ^0.15.4
   m3u8: ^1.0.0
-  youtube_explode_dart: ^2.3.4
+  youtube_explode_dart:
+    git:
+      url: https://github.com/Hexer10/youtube_explode_dart.git
+      ref: master
 
 dev_dependencies:
   lints: ^4.0.0
